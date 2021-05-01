@@ -1,19 +1,34 @@
 <template>
   <div class="animate-banner" id="animate-banner">
-    <!-- <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i1.png" data-move-multiple="16.395" />
+    <div class="layer">
+      <img
+        src="../../assets/images/bilibiliBanner/i1.png"
+        data-move-multiple="16.395"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i2.png" data-move-multiple="16.395" />
+      <img
+        src="../../assets/images/bilibiliBanner/i2.png"
+        data-move-multiple="16.395"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i3.png" data-move-multiple="12.145" />
+      <img
+        src="../../assets/images/bilibiliBanner/i3.png"
+        data-move-multiple="12.145"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i4.png" data-move-multiple="3.718" />
+      <img
+        src="../../assets/images/bilibiliBanner/i4.png"
+        data-move-multiple="3.718"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i5.png" data-move-multiple="14.573" />
+      <img
+        src="../../assets/images/bilibiliBanner/i5.png"
+        data-move-multiple="14.573"
+      />
     </div>
     <div class="layer">
       <img
@@ -23,10 +38,16 @@
       />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i7.png" data-move-multiple="2.342" />
+      <img
+        src="../../assets/images/bilibiliBanner/i7.png"
+        data-move-multiple="2.342"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i8.png" data-move-multiple="1.952" />
+      <img
+        src="../../assets/images/bilibiliBanner/i8.png"
+        data-move-multiple="1.952"
+      />
     </div>
     <div class="layer">
       <img
@@ -43,22 +64,35 @@
       />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i11.png" data-move-multiple="1.457" />
+      <img
+        src="../../assets/images/bilibiliBanner/i11.png"
+        data-move-multiple="1.457"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i12.png" data-move-multiple="1.092" />
+      <img
+        src="../../assets/images/bilibiliBanner/i12.png"
+        data-move-multiple="1.092"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i13.png" data-move-multiple="1.104" />
+      <img
+        src="../../assets/images/bilibiliBanner/i13.png"
+        data-move-multiple="1.104"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i14.png" data-move-multiple="0.781" />
+      <img
+        src="../../assets/images/bilibiliBanner/i14.png"
+        data-move-multiple="0.781"
+      />
     </div>
     <div class="layer">
-      <img src="../../assets/images/bilibiliBanner/i15.png" data-move-multiple="0.546" />
-    </div> -->
-
-        <h1>测试git</h1>
+      <img
+        src="../../assets/images/bilibiliBanner/i15.png"
+        data-move-multiple="0.546"
+      />
+    </div>
   </div>
 </template>
 <script>
@@ -75,12 +109,12 @@ export default {
     let imgs = document.querySelectorAll(".layer img");
     imgs = [...imgs];
 
-    let o_imgs_styles = imgs.map(el => {
+    let o_imgs_styles = imgs.map((el) => {
       let s = window.getComputedStyle(el, null).getPropertyValue("transform");
       return `transform: ${s}`;
     });
 
-    let o_imgs_opacitys = imgs.map(el => {
+    let o_imgs_opacitys = imgs.map((el) => {
       let o = window.getComputedStyle(el, null).getPropertyValue("opacity");
       return `opacity: ${0}`;
     });
@@ -92,10 +126,10 @@ export default {
     //   let ei;
     // }
 
-    mb.onmouseenter = function({ x }) {
+    mb.onmouseenter = function ({ x }) {
       intX = x;
     };
-    mb.onmousemove = function({ x }) {
+    mb.onmousemove = function ({ x }) {
       imgs.forEach((el, i) => {
         const dm = el.dataset.moveMultiple;
         const dis = (intX - x) / Number(dm);
@@ -121,7 +155,7 @@ export default {
         el.setAttribute("style", transform_str);
       });
     };
-    mb.onmouseleave = function() {
+    mb.onmouseleave = function () {
       imgs.forEach((el, i) => {
         el.setAttribute("style", o_imgs_styles[i]);
       });
@@ -201,7 +235,7 @@ export default {
     //     move();
     //   }, 2000);
   },
-  methods: {}
+  methods: {},
 };
 </script>
 <style scoped>
