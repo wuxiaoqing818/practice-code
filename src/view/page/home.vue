@@ -1,6 +1,6 @@
 <template>
   <div class="animate-banner" id="animate-banner">
-    <div class="layer">
+    <!-- <div class="layer">
       <img
         src="../../assets/images/bilibiliBanner/i1.png"
         data-move-multiple="16.395"
@@ -92,7 +92,7 @@
         src="../../assets/images/bilibiliBanner/i15.png"
         data-move-multiple="0.546"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
