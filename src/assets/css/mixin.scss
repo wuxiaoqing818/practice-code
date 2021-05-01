@@ -1,0 +1,259 @@
+
+//W3C 的 HTML 4.0 标准仅支持 16 种颜色名，它们是：aqua、black、blue、fuchsia、gray、green、lime、maroon、navy、olive、purple、red、silver、teal、white、yellow。
+
+// 全局基础色-中性色
+$bs-white:#fff;
+$bs-light-white:#EEEEEE;
+$bs-dark-white:#EFEFEF;
+$bs-ghost-white :rgba(255, 255, 255, .75);
+//灰色
+$bs-gains-gray :#bbb;
+$bs-light-gray:#aeaeae;
+$bs-medium-gray:#999;
+$bs-gray:#666;
+
+//黑色
+$bs-black:#333;
+$bs-deep-black:#252525;
+$bs-dark-black:#222;
+$bs-light-black:#2a303e;
+
+//蓝色
+$bs-light-blue:#5EC9F6;
+$bs-medium-blue:#8B7EF6;
+$bs-blue:#5898fa;
+$bs-dark-blue:#2c78ff;
+
+//青色
+$bs-aqua:#FF9A49;
+//橘黄
+$bs-yellow:#F8D120;
+//紫色
+$bs-purple:#FB8696;
+//红色
+$bs-red:#FF3600;
+
+
+//背景色
+//灰色
+$bg-light-gray:#F6F7F9;
+$bg-medium-gray:#f2f2f2;
+$bg-gains-gray:#F5F5F5;
+$bg-gray:#f3f3f3;
+$bg-normal-color:#F9F9F9;
+
+
+
+//分割线
+$line-gray:#ddd;
+$line-light-gray:#e6e6e6;
+$line-normal-gray:#E5E5E5;
+$line-divider:#EFEFEF;
+$line-light-divider:#F4F4F4;
+$bs-border:#D6D6D6;
+
+//默认字体颜色
+$text-color:#616161;
+
+//图标颜色
+$icon-grey:#0ed6c3;
+$icon-yellow:#fed337;
+$icon-pink:#f9869d;
+$icon-aqua:#5ec9f6;
+$icon-coral:#ff9a49;
+$icon-blue:#8b7ef6;
+$icon-green:#76CC8F;
+
+/**文字大小**/
+//辅助问题-提示文字
+$text-xs:12px;
+//正文内容
+$text-sm:14px;
+//副标题
+$text-df:16px;
+//大标题
+$text-lg:18px;
+
+//自定义文本样式
+@mixin text_style($size:14px,$color:$text-color,$weight:400) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+/**按钮样式**/
+//默认样式
+@mixin btn_normal($size:14px,$color:$bs-blue) {
+  border-color: $color;
+  background-color: $color;
+  color: $bs-white;
+  font-size: $size;
+}
+
+//镂空样式
+@mixin btn_normal_block($size:14px,$color:bg-gray) {
+  border: 1px solid $line-gray;
+  background: $color;
+  color: $bs-black;
+  font-size: $size;
+}
+
+//禁用样式
+@mixin btn_disable($size:14px,$color:$bs-gains-gray) {
+  border: 1px solid $line-gray;
+  background: $color;
+  color: $bs-black;
+  font-size: $size;
+}
+
+@mixin text_nowrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin notification {
+    padding: 1px 3px;
+    min-width: 15px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px 10px;
+    color: #fff;
+    background: $bs-red;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@include keyframes(toW300) {
+    0% {
+        width: 0;
+        left: 300px;
+        overflow: hidden;
+    }
+
+    100% {
+        width: 300px;
+        left: 0;
+        overflow: hidden;
+    }
+}
+
+@include keyframes(toW0) {
+    0% {
+        width: 300px;
+        left: 0;
+        overflow: hidden;
+    }
+
+    100% {
+        width: 0;
+        left: 300px;
+        overflow: hidden;
+    }
+}
+
+@include keyframes(toW110) {
+    0% {
+        // width: 0;
+        left: -110px;
+        width: 0;
+        overflow: hidden;
+    }
+
+    100% {
+        // width: 110px;
+        left: 0;
+        width: 110px;
+        overflow: hidden;
+    }
+}
+
+@include keyframes(toW10) {
+    0% {
+        left: 0;
+        width: 110px;
+        overflow: hidden;
+    }
+
+    100% {
+        left: -110px;
+        width: 0;
+        overflow: hidden;
+    }
+}
+
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+// 一像素下边框
+@mixin bottom-border-1px($color) {
+    position: relative;
+    border: none;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color;
+        transform: scaleY(0.5);
+    }
+
+}
+
+
+// 一像素上边框
+@mixin top-border-1px($color) {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 200;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color;
+    }
+
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-direction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
