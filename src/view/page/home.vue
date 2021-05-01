@@ -93,7 +93,6 @@
         data-move-multiple="0.546"
       />
     </div>
-    <h2>nuanfeng</h2>
   </div>
 </template>
 <script>
@@ -120,12 +119,7 @@ export default {
       return `opacity: ${0}`;
     });
 
-    // function getTranslateVal(str) {
-    //   let s = "translate",
-    //     e = ")";
-    //   let si = str.indexOf(s);
-    //   let ei;
-    // }
+  
 
     mb.onmouseenter = function ({ x }) {
       intX = x;
@@ -162,79 +156,6 @@ export default {
       });
     };
 
-    // 樱花飘落canvas
-    //   const c = document.getElementById("canvas");
-    //   const ctx = c.getContext("2d");
-    //   const _w = c.width,
-    //     _h = c.height;
-    //   const scales = [0.03, 0.04, 0.05, 0.06, 0.07, 0.08];
-    //   const slen = scales.length - 1;
-    //   const speedX = 2,
-    //     speedY = 3;
-    //   class flower {
-    //     constructor() {
-    //       this.x = Math.random() * _w;
-    //       this.y = 0;
-    //       this.speedX = 0;
-    //       this.speedY = 0;
-    //       this.scale = 0;
-    //       this.width = 0;
-    //       this.height = 0;
-    //       this.img = null;
-    //     }
-    //     init() {
-    //       this.img = new Image();
-    //       const f = Math.random() * 10 > 5 ? 1 : 0;
-    //       const si = Math.floor(Math.random() * slen);
-    //       this.speedX = Math.random() * speedX;
-    //       this.speedY = Math.random() * speedY;
-    //       this.scale = scales[si];
-    //       this.width = this.height = 250 * this.scale;
-    //       const src = f
-    //         ? "../../assets/images/bilibiliBanner/flow1.png"
-    //         : "../../assets/images/bilibiliBanner/flow2.png";
-    //       this.img.src = src;
-    //     }
-    //     draw(ctx) {
-    //       this.img.onload = () => {
-    //         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    //       };
-    //     }
-    //     move(ctx) {
-    //       this.x =
-    //         this.x + this.speedX >= _w
-    //           ? Math.random() * _w
-    //           : this.x + this.speedX;
-    //       this.y = this.y >= _h ? 0 : this.y + this.speedY;
-    //       // console.log(this.img)
-    //       // console.log(ctx.drawImage)
-    //  this.img.onload = () => {
-    //         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    //       };
-    //       // ctx.drawImage(this.img, this.x, this.y, this.width, this.height); //报错
-    //     }
-    //   }
-    //   const flowers = [];
-    //   function start() {
-    //     const max = 50;
-    //     for (let i = 0; i < max; i++) {
-    //       const f = new flower();
-    //       f.init();
-    //       f.draw(ctx);
-    //       flowers.push(f);
-    //     }
-    //   }
-    //   function move() {
-    //     ctx.clearRect(0, 0, _w, _h);
-    //     for (let i = 0; i < flowers.length; i++) {
-    //       flowers[i].move(ctx);
-    //     }
-    //     window.requestAnimationFrame(move);
-    //   }
-    //   setTimeout(() => {
-    //     start();
-    //     move();
-    //   }, 2000);
   },
   methods: {},
 };

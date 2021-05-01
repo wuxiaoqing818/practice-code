@@ -13,6 +13,10 @@ Vue.prototype.globalVariable = globalVariable
 import echarts from "echarts";
 Vue.prototype.$echarts = echarts;
 
+//粒子动画效果
+import VueParticles from 'vue-particles'  
+Vue.use(VueParticles)  
+
 //moment处理时间
 import moment from "moment"
 Vue.prototype.$moment = moment

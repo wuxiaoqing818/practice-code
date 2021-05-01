@@ -51,7 +51,8 @@
         </el-menu>
       </el-col>
       <el-col :span="20" style="height: 100%;overflow: auto;">
-        <router-view></router-view>
+    
+          <router-view></router-view>
       </el-col>
     </el-row>
   </div>
