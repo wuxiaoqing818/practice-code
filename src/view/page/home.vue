@@ -1,108 +1,123 @@
 <template>
-  <div class="animate-banner" id="animate-banner">
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i1.png"
-        data-move-multiple="16.395"
-      />
+  <div class="home">
+    <div id="watermark"></div>
+    <div
+      class="watermark"
+      v-watermark="{
+        text: '水印内容', // 水印文字内容
+        angle: 25, // 水印倾斜度
+        color: 'rgba(0,0,0,.15)', // 水印文字颜色
+        fontSize: '16px', //   水印文字大小
+        top: 0, // 水印区域距离浏览器可视区域顶部的距离，单位px
+      }"
+    ></div>
+    <div class="animate-banner" id="animate-banner">
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i1.png"
+          data-move-multiple="16.395"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i2.png"
+          data-move-multiple="16.395"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i3.png"
+          data-move-multiple="12.145"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i4.png"
+          data-move-multiple="3.718"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i5.png"
+          data-move-multiple="14.573"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i6.png"
+          data-move-multiple="29.277"
+          data-is-opacity="0"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i7.png"
+          data-move-multiple="2.342"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i8.png"
+          data-move-multiple="1.952"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i9.png"
+          data-move-multiple="4.098"
+          data-is-opacity="1"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i10.png"
+          data-move-multiple="2.826"
+          data-is-opacity="1"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i11.png"
+          data-move-multiple="1.457"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i12.png"
+          data-move-multiple="1.092"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i13.png"
+          data-move-multiple="1.104"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i14.png"
+          data-move-multiple="0.781"
+        />
+      </div>
+      <div class="layer">
+        <img
+          src="../../assets/images/bilibiliBanner/i15.png"
+          data-move-multiple="0.546"
+        />
+      </div>
     </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i2.png"
-        data-move-multiple="16.395"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i3.png"
-        data-move-multiple="12.145"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i4.png"
-        data-move-multiple="3.718"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i5.png"
-        data-move-multiple="14.573"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i6.png"
-        data-move-multiple="29.277"
-        data-is-opacity="0"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i7.png"
-        data-move-multiple="2.342"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i8.png"
-        data-move-multiple="1.952"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i9.png"
-        data-move-multiple="4.098"
-        data-is-opacity="1"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i10.png"
-        data-move-multiple="2.826"
-        data-is-opacity="1"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i11.png"
-        data-move-multiple="1.457"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i12.png"
-        data-move-multiple="1.092"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i13.png"
-        data-move-multiple="1.104"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i14.png"
-        data-move-multiple="0.781"
-      />
-    </div>
-    <div class="layer">
-      <img
-        src="../../assets/images/bilibiliBanner/i15.png"
-        data-move-multiple="0.546"
-      />
-    </div>
-    <h2>nuanfeng</h2>
   </div>
 </template>
 <script>
+import WaterMark from "../../plugin/waterMark";
 export default {
   name: "Navs",
   data() {
     return {};
   },
+  created() {},
   mounted() {
+    this.showMark(); //水印
     let _this = this;
     // 鼠标移动
     const mb = document.getElementById("animate-banner");
@@ -236,13 +251,33 @@ export default {
     //     move();
     //   }, 2000);
   },
-  methods: {},
+  methods: {
+    showMark() {
+      new WaterMark({
+        watermark_rows: 10, // 水印行数
+        watermark_txt: "111111", // 水印内容
+        watermark_width: 200, // 水印宽度
+        watermark_color: "red", // 字体颜色
+        watermark_fontsize: "14px", // 字体大小
+        watermark_angle: 30, // 字体倾斜角度
+        watermark_height: 140, // 水印长度
+        watermark_y_space: 10, // Y轴间隔
+        watermark_alpha: 0.6, // 水印字体透明度
+        watermark_parent_node: "watermark",
+      });
+    },
+  },
 };
 </script>
 <style scoped>
 html,
 body {
   margin: 0;
+}
+#watermark,.watermark {
+  width: 100%;
+  height: 400px;
+  border: 1px solid red;
 }
 .animate-banner {
   margin: 0 auto;
