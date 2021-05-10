@@ -2,9 +2,10 @@
   <div class="home">
     <div id="watermark"></div>
     <div
-      class="watermark"
+      id="watermarkDirective"
       v-watermark="{
-        text: '水印内容', // 水印文字内容
+        watermarkParentNode: 'watermarkDirective',
+        text: '自定义指令水印内容', // 水印文字内容
         angle: 25, // 水印倾斜度
         color: 'rgba(0,0,0,.15)', // 水印文字颜色
         fontSize: '16px', //   水印文字大小
@@ -13,34 +14,19 @@
     ></div>
     <div class="animate-banner" id="animate-banner">
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i1.png"
-          data-move-multiple="16.395"
-        />
+        <img src="../../assets/images/bilibiliBanner/i1.png" data-move-multiple="16.395" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i2.png"
-          data-move-multiple="16.395"
-        />
+        <img src="../../assets/images/bilibiliBanner/i2.png" data-move-multiple="16.395" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i3.png"
-          data-move-multiple="12.145"
-        />
+        <img src="../../assets/images/bilibiliBanner/i3.png" data-move-multiple="12.145" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i4.png"
-          data-move-multiple="3.718"
-        />
+        <img src="../../assets/images/bilibiliBanner/i4.png" data-move-multiple="3.718" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i5.png"
-          data-move-multiple="14.573"
-        />
+        <img src="../../assets/images/bilibiliBanner/i5.png" data-move-multiple="14.573" />
       </div>
       <div class="layer">
         <img
@@ -50,16 +36,10 @@
         />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i7.png"
-          data-move-multiple="2.342"
-        />
+        <img src="../../assets/images/bilibiliBanner/i7.png" data-move-multiple="2.342" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i8.png"
-          data-move-multiple="1.952"
-        />
+        <img src="../../assets/images/bilibiliBanner/i8.png" data-move-multiple="1.952" />
       </div>
       <div class="layer">
         <img
@@ -76,34 +56,19 @@
         />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i11.png"
-          data-move-multiple="1.457"
-        />
+        <img src="../../assets/images/bilibiliBanner/i11.png" data-move-multiple="1.457" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i12.png"
-          data-move-multiple="1.092"
-        />
+        <img src="../../assets/images/bilibiliBanner/i12.png" data-move-multiple="1.092" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i13.png"
-          data-move-multiple="1.104"
-        />
+        <img src="../../assets/images/bilibiliBanner/i13.png" data-move-multiple="1.104" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i14.png"
-          data-move-multiple="0.781"
-        />
+        <img src="../../assets/images/bilibiliBanner/i14.png" data-move-multiple="0.781" />
       </div>
       <div class="layer">
-        <img
-          src="../../assets/images/bilibiliBanner/i15.png"
-          data-move-multiple="0.546"
-        />
+        <img src="../../assets/images/bilibiliBanner/i15.png" data-move-multiple="0.546" />
       </div>
     </div>
   </div>
@@ -125,27 +90,20 @@ export default {
     let imgs = document.querySelectorAll(".layer img");
     imgs = [...imgs];
 
-    let o_imgs_styles = imgs.map((el) => {
+    let o_imgs_styles = imgs.map(el => {
       let s = window.getComputedStyle(el, null).getPropertyValue("transform");
       return `transform: ${s}`;
     });
 
-    let o_imgs_opacitys = imgs.map((el) => {
+    let o_imgs_opacitys = imgs.map(el => {
       let o = window.getComputedStyle(el, null).getPropertyValue("opacity");
       return `opacity: ${0}`;
     });
 
-    // function getTranslateVal(str) {
-    //   let s = "translate",
-    //     e = ")";
-    //   let si = str.indexOf(s);
-    //   let ei;
-    // }
-
-    mb.onmouseenter = function ({ x }) {
+    mb.onmouseenter = function({ x }) {
       intX = x;
     };
-    mb.onmousemove = function ({ x }) {
+    mb.onmousemove = function({ x }) {
       imgs.forEach((el, i) => {
         const dm = el.dataset.moveMultiple;
         const dis = (intX - x) / Number(dm);
@@ -171,102 +129,29 @@ export default {
         el.setAttribute("style", transform_str);
       });
     };
-    mb.onmouseleave = function () {
+    mb.onmouseleave = function() {
       imgs.forEach((el, i) => {
         el.setAttribute("style", o_imgs_styles[i]);
       });
     };
-
-    // 樱花飘落canvas
-    //   const c = document.getElementById("canvas");
-    //   const ctx = c.getContext("2d");
-    //   const _w = c.width,
-    //     _h = c.height;
-    //   const scales = [0.03, 0.04, 0.05, 0.06, 0.07, 0.08];
-    //   const slen = scales.length - 1;
-    //   const speedX = 2,
-    //     speedY = 3;
-    //   class flower {
-    //     constructor() {
-    //       this.x = Math.random() * _w;
-    //       this.y = 0;
-    //       this.speedX = 0;
-    //       this.speedY = 0;
-    //       this.scale = 0;
-    //       this.width = 0;
-    //       this.height = 0;
-    //       this.img = null;
-    //     }
-    //     init() {
-    //       this.img = new Image();
-    //       const f = Math.random() * 10 > 5 ? 1 : 0;
-    //       const si = Math.floor(Math.random() * slen);
-    //       this.speedX = Math.random() * speedX;
-    //       this.speedY = Math.random() * speedY;
-    //       this.scale = scales[si];
-    //       this.width = this.height = 250 * this.scale;
-    //       const src = f
-    //         ? "../../assets/images/bilibiliBanner/flow1.png"
-    //         : "../../assets/images/bilibiliBanner/flow2.png";
-    //       this.img.src = src;
-    //     }
-    //     draw(ctx) {
-    //       this.img.onload = () => {
-    //         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    //       };
-    //     }
-    //     move(ctx) {
-    //       this.x =
-    //         this.x + this.speedX >= _w
-    //           ? Math.random() * _w
-    //           : this.x + this.speedX;
-    //       this.y = this.y >= _h ? 0 : this.y + this.speedY;
-    //       // console.log(this.img)
-    //       // console.log(ctx.drawImage)
-    //  this.img.onload = () => {
-    //         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    //       };
-    //       // ctx.drawImage(this.img, this.x, this.y, this.width, this.height); //报错
-    //     }
-    //   }
-    //   const flowers = [];
-    //   function start() {
-    //     const max = 50;
-    //     for (let i = 0; i < max; i++) {
-    //       const f = new flower();
-    //       f.init();
-    //       f.draw(ctx);
-    //       flowers.push(f);
-    //     }
-    //   }
-    //   function move() {
-    //     ctx.clearRect(0, 0, _w, _h);
-    //     for (let i = 0; i < flowers.length; i++) {
-    //       flowers[i].move(ctx);
-    //     }
-    //     window.requestAnimationFrame(move);
-    //   }
-    //   setTimeout(() => {
-    //     start();
-    //     move();
-    //   }, 2000);
   },
   methods: {
     showMark() {
+      //调用类
       new WaterMark({
         watermark_rows: 10, // 水印行数
-        watermark_txt: "111111", // 水印内容
+        watermark_txt: "吴晓晴的项目", // 水印内容
         watermark_width: 200, // 水印宽度
-        watermark_color: "red", // 字体颜色
-        watermark_fontsize: "14px", // 字体大小
+        watermark_color: "rgba(0,0,0,.15)", // 字体颜色
+        watermark_fontsize: "16px", // 字体大小
         watermark_angle: 30, // 字体倾斜角度
         watermark_height: 140, // 水印长度
         watermark_y_space: 10, // Y轴间隔
-        watermark_alpha: 0.6, // 水印字体透明度
-        watermark_parent_node: "watermark",
+        watermark_alpha: 1, // 水印字体透明度
+        watermark_parent_node: "watermark"
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
@@ -274,10 +159,15 @@ html,
 body {
   margin: 0;
 }
-#watermark,.watermark {
+.home {
+  height: 2000px;
+}
+#watermark,
+#watermarkDirective {
   width: 100%;
   height: 400px;
   border: 1px solid red;
+  position: relative;
 }
 .animate-banner {
   margin: 0 auto;
