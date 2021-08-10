@@ -5,11 +5,17 @@
     <p>高阶函数：{{ gaojie() }}</p>
     <p>计算属性：{{ remaningCount }}</p>
     <p>计算属性：{{ toggleAllStat }}</p>
+
+    <div class="list-detail">
+      <list :list="list"></list>
+    </div>
   </div>
 </template>
 
 <script>
+import List from "../../../components/list";
 export default {
+  components: { List },
   data() {
     return {
       str: "1111",
@@ -17,6 +23,35 @@ export default {
       computedStr: "",
       computedFlag: false,
       todos: [{ completed: true }, { completed: false }, { completed: true }],
+      list: [
+        {
+          name: "经济",
+          children: [
+            {
+              name: "如家",
+              children: [
+                {
+                  name: "上江路-如家",
+                },
+                {
+                  name: "望江路-如家",
+                },
+              ],
+            },
+            {
+              name: "7天",
+              children: [
+                {
+                  name: "长江路-7天",
+                },
+                {
+                  name: "望江路-7天",
+                },
+              ],
+            },
+          ],
+        },
+      ],
     };
   },
   created() {
@@ -38,13 +73,12 @@ export default {
     console.log(arr);
     console.log(arr.reduce((pre, next) => pre + next, 1));
 
-   const reduceObj = Object.keys(obj).reduce((pre, next) =>{
-     console.log(`%c${pre}`,'color:red;')
-      pre[next] = 1
-      return pre
-     
-   },{})
-   console.log(reduceObj)
+    const reduceObj = Object.keys(obj).reduce((pre, next) => {
+      console.log(`%c${pre}`, "color:red;");
+      pre[next] = 1;
+      return pre;
+    }, {});
+    console.log(reduceObj);
 
     // var map = new Map();
     // for (let key in obj) {
