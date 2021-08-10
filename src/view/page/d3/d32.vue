@@ -25,16 +25,15 @@ export default {
     //     console.log(i);
     //   }, 100);
     // }
-    
 
     new Promise((res, reg) => {
       for (var i = 0; i < 10; i++) {
         setTimeout(() => {
-          res(i)
+          res(i);
         }, 100);
       }
-    }).then(res=>{
-      console.log(res)
+    }).then((res) => {
+      console.log(res);
     });
 
     function* printNum() {
@@ -55,6 +54,29 @@ export default {
     const flatArr = [2, 2, [1, 2, [1, 2]], 3, 4, 6];
 
     console.table([...new Set(flatArr.flat(Infinity))].sort((a, b) => a - b));
+  },
+  mounted() {
+    const arr = [
+      [1, 2],
+      [3, 4],
+    ];
+    for (let [i, item] of arr.entries()) {
+      console.log(item);
+    }
+    var myMap = new Map();
+    myMap.set(0, "zero");
+    myMap.set(1, "one");
+    console.log(myMap);
+
+    const obj = { key: '1' };
+    // if ("key" in obj) {
+    //   alert("11");
+    // }
+    if(!obj?.name){
+      alert('111')
+    }
+
+
   },
   computed: {
     htmlRednder() {
